@@ -1,0 +1,91 @@
+/* Gaya untuk handphone atau layar dengan lebar maksimum 600px */
+@media screen and (max-width: 600px) {
+  body {
+    height: auto;
+  }
+  .container {
+    width: 80%;
+    margin-top: 20px;
+  }
+  /* Sesuaikan gaya lainnya untuk responsif pada layar kecil di sini */
+  h2 {
+    font-size: 24px;
+  }
+}
+
+body {
+  background-image: url('backsidebar.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Tetapkan gambar latar belakang agar tetap di tempat saat menggulir */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Gunakan min-height agar background tetap rapih */
+  margin: 0;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+.container {
+  width: 300px;
+  background-color: rgba(0, 174, 255, 0.44);
+  padding: 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 60px;
+  position: relative; /* Tambahkan posisi relative pada container */
+}
+
+h2 {
+  margin-top: 0;
+  color: white;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  color: white;
+}
+
+input {
+  width: calc(100% - 12px);
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #3498db;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* Gaya untuk gambar gift */
+.moving-gift {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  animation: floatGift 5s ease-in-out infinite;
+}
+
+@keyframes floatGift {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 5px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

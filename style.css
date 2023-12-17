@@ -1,0 +1,551 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+b time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* style */
+
+body {
+  background-image: url(toystory.jpeg);
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -500px; /* Sidebar awalnya di luar tampilan */
+  width: 240px;
+  height: 100%;
+  background-image: url(side.jpg); /* Menggunakan gambar sebagai latar belakang */
+  background-size: 100% 100%;
+  backdrop-filter: blur(10px); /* Efek blur */
+  transition: left 0.3s ease;
+  z-index: 1; /* Atur agar sidebar selalu di lapisan terdepan */
+  padding: 20px;
+}
+.content {
+  margin-left: 0; /* Konten tidak tergeser */
+  transition: margin-left 0.3s ease;
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 2; /* Agar tombol tetap di atas sidebar */
+}
+
+.toggle-btn::before {
+  content: '☰';
+  font-size: 24px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  display: none; /* Tombol tutup awalnya disembunyikan */
+  z-index: 2;
+}
+
+.close-btn::before {
+  content: '☰';
+  font-size: 24px;
+}
+
+.sidebar.active {
+  left: 0; /* Sidebar terbuka saat aktif */
+}
+
+.sidebar.active + .content {
+  margin-left: 280px; /* Konten tergeser saat sidebar terbuka */
+}
+.log {
+  background-color: cornflowerblue;
+  width: 100px;
+  height: 20px;
+  text-align: center;
+  color: #ccc;
+  font-weight: bold;
+  padding-top: 5px;
+}
+.log:hover {
+  background-color: rgb(0, 21, 255);
+}
+.judul {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 50px auto;
+  width: 250px;
+  text-align: center;
+  font-size: x-large;
+  font-weight: bold;
+  color: white;
+  background-color: cornflowerblue;
+  border-radius: 10px;
+  padding: 8px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: cornflowerblue;
+}
+
+th,
+td {
+  border: 1px solid #000000;
+  text-align: center;
+  padding: 8px;
+  color: white;
+}
+
+th {
+  background-color: cornflowerblue;
+}
+
+form {
+  margin-bottom: 20px;
+}
+.nama,
+.nim,
+.fakultas,
+.jurusan,
+.notlpn,
+.email {
+  width: 100px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-large;
+  margin: 5px auto;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+}
+label {
+  margin-bottom: 8px;
+  color: white;
+  background-color: cornflowerblue;
+  font-size: x-large;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+input {
+  display: block;
+  width: calc(80% - 12px);
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background-color: cornflowerblue;
+}
+
+button {
+  padding: 10px;
+  background-color: cornflowerblue;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 5px;
+  backdrop-filter: blur(5px);
+  transition: background-color 0.3s ease-in-out;
+}
+button:hover {
+  background-color: rgb(0, 21, 255);
+}
+.button {
+  text-align: center;
+  width: 200px;
+  margin: 250px auto 0px;
+}
+.container {
+  padding-right: 50px;
+  width: 100%;
+  max-width: 100%;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  position: relative;
+}
+.kiri,
+.kanan {
+  box-sizing: border-box;
+  padding: 10px;
+}
+.kiri {
+  width: 40%;
+  float: left;
+}
+.satu,
+.dua,
+.tiga,
+.empat,
+.lima,
+.enam {
+  width: 100%;
+  display: inline-block;
+}
+.img1,
+.img2,
+.img3,
+.img4,
+.img5,
+.img6 {
+  float: left;
+  width: 90px;
+  height: 90px;
+}
+.kanan {
+  width: 40%;
+  float: right;
+}
+
+/* script micro clearfix untuk membersihkan float */
+.cf:before,
+.cf:after {
+  content: ' '; /* 1 */
+  display: table; /* 2 */
+}
+
+.cf:after {
+  clear: both;
+}
+
+/* Gunakan media query hanya untuk layar dengan lebar maksimum 768px */
+/* CSS untuk layar dengan lebar maksimum 768px */
+@media only screen and (max-width: 768px) {
+  body {
+    background-image: url(toystory.jpeg);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+  }
+  .log {
+    background-color: cornflowerblue;
+  }
+  .log:hover {
+    background-color: rgb(0, 21, 255);
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -500px; /* Sidebar awalnya di luar tampilan */
+    width: 240px;
+    height: 100%;
+    background-image: url(sidebartoy.jpg); /* Menggunakan gambar sebagai latar belakang */
+    background-size: cover;
+    backdrop-filter: blur(10px); /* Efek blur */
+    transition: left 0.3s ease;
+    z-index: 1; /* Atur agar sidebar selalu di lapisan terdepan */
+    padding: 20px;
+  }
+
+  .content {
+    margin-left: 0; /* Konten tidak tergeser */
+    transition: margin-left 0.3s ease;
+    padding: 20px;
+  }
+
+  .toggle-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 2; /* Agar tombol tetap di atas sidebar */
+    font-size: 24px;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    display: none; /* Tombol tutup awalnya disembunyikan */
+    z-index: 2;
+    font-size: 24px;
+  }
+
+  .sidebar.active {
+    left: 0; /* Sidebar terbuka saat aktif */
+  }
+
+  .sidebar.active + .content {
+    margin-left: 260px; /* Konten tergeser saat sidebar terbuka */
+  }
+
+  .judul {
+    margin: 30px auto;
+    width: 50%;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+    background-color: cornflowerblue;
+    border-radius: 10px;
+    padding: 8px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: cornflowerblue;
+  }
+
+  th,
+  td {
+    border: 1px solid #000;
+    text-align: center;
+    padding: 8px;
+    color: white;
+  }
+
+  th {
+    background-color: cornflowerblue;
+  }
+
+  form {
+    margin-bottom: 20px;
+  }
+
+  /* Kode untuk input dan label */
+  .nama,
+  .nim,
+  .fakultas,
+  .jurusan,
+  .notlpn,
+  .email {
+    width: 100%;
+    font-weight: bold;
+    font-size: small;
+    margin: 5px auto;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+  }
+
+  label {
+    margin-bottom: 8px;
+    color: white;
+    background-color: cornflowerblue;
+    font-size: small;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+
+  input {
+    display: block;
+    width: calc(100%-12px);
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: cornflowerblue;
+  }
+
+  /* Kode untuk tombol */
+  button {
+    padding: 10px;
+    background-color: cornflowerblue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  button:hover {
+    background-color: rgb(0, 21, 255);
+  }
+
+  .button {
+    text-align: center;
+    width: 80%;
+    margin: 20px auto 0;
+  }
+
+  /* Kode untuk layout container */
+  .container {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    position: relative;
+  }
+
+  /* Kode untuk layout kiri dan kanan */
+  .kiri,
+  .kanan {
+    box-sizing: border-box;
+    padding: 10px;
+    width: 50%;
+  }
+
+  /* Kode untuk elemen tampilan */
+  .satu,
+  .dua,
+  .tiga,
+  .empat,
+  .lima,
+  .enam {
+    width: 100%;
+    display: inline-block;
+  }
+
+  .img1,
+  .img2,
+  .img3,
+  .img4,
+  .img5,
+  .img6 {
+    display: none;
+  }
+
+  /* Kode clearfix untuk membersihkan float */
+  .cf:before,
+  .cf:after {
+    content: ' ';
+    display: table;
+  }
+
+  .cf:after {
+    clear: both;
+  }
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <title>Contoh Tabel HTML dengan Formulir Input</title>
+  </head>
+  <link
+    rel="stylesheet"
+    href="style.css"
+  />
+  <body>
+    <div
+      class="toggle-btn"
+      onclick="toggleSidebar()"
+    ></div>
+    <div
+      class="close-btn"
+      onclick="toggleSidebar()"
+    ></div>
+
+    <div
+      class="sidebar"
+      id="sidebar"
+    >
+      <h2>AsepSaepudin</h2>
+      <ul>
+        <li>
+          <a href="asep.html"><div class="log">Logout</div></a>
+        </li>
+      </ul>
+    </div>
+    <div class="judul">
+      <h1>Data Mahasiswa</h1>
+    </div>
+
+    <div class="container cf">
+      <form>
+        <div class="kiri">
+          <div class="satu">
+            <div class="img1">
+              <img
+                src="topi.jpg"
+                alt=""
+              />
+            </div>
+            <div class="labnama">
+              <label for="nim">Nama:</label>
+              <input
+                type="text"
+                id="nim"
+                name="nim"
+                required
+              />
+            </div>
+          </div>
+          <div class="dua">
+            <div class="img2">
+              <img
+                src="astronot.jpg"
+                alt=""
+              />
+            </div>
+            <div class="labnim">
+              <label for="nama">Nim:</label
+              ><input
+                type="text"
+                id="nama"
+                name="nama"
+                required
+              />
+            </div>
+          </div>
+          <div class="tiga">
+            <div class="img3">
+              <img
+                src="cewek.jpg"
+                alt=""
+              />
+            </div>
+            <div class="labfakultas">
+              <label for="Fakultas">Fakultas:</label>
+              <input
+                type="text"
+                id="Fakultas"
+                name="Fakultas"
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <div class="kanan">
+          <div class="empat">
+            <div class="img4">
+              <img
+                src="beruang.jpg"
+                alt=""
+              />
+            </div>
+            <div class="labjurusan">
+              <label for="Jurusan">Jurusan:</label>
+              <input
+                type="text"
+                id="Jurusan"
+                name="Jurusan"
+                required
+              />
+            </div>
+          </div>
+          <div class="lima">
+            <div class="img5">
+              <img
+                src="dog.jpg"
+                alt=""
+              />
+            </div>
+            <div class="labnotlpn">
+              <label for="Notlpn">No telpn:</label>
+              <input
+                type="text"
+                id="Notlpn"
+                name="Notlpn"
+                required
+              />
+            </div>
+          </div>
+          <div class="enam">
+            <div class="img6">
+              <img
+                src="telor.jpg"
+                alt=""
+              />
+            </div>
+            <div class="labenam">
+              <label for="Email">Email:</label>
+              <input
+                type="text"
+                id="Email"
+                name="Email"
+                required
+              />
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="button">
+        <button
+          type="submit"
+          onclick="addData()"
+        >
+          Tambah Data
+        </button>
+      </div>
+    </div>
+
+    <br />
+    <table id="data-table">
+      <thead>
+        <tr>
+          <th><div class="nama">Nama</div></th>
+          <th><div class="nim">Nim</div></th>
+          <th><div class="fakultas">Fakultas</div></th>
+          <th><div class="jurusan">Jurusan</div></th>
+          <th><div class="notlpn">No tlpn</div></th>
+          <th><div class="email">Email</div></th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data akan ditambahkan secara dinamis melalui JavaScript -->
+      </tbody>
+    </table>
+    <script
+      src="script.js"
+      ;
+    ></script>
+  </body>
+</html>
